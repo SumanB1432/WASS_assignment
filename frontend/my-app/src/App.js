@@ -1,10 +1,11 @@
 import React from 'react';
+import Additems from './components/additems';
 
 
 function App() {
   return (
     <div >
-        <h1>Hii</h1>
+        <Additems />
     </div>
   )
 }

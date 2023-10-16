@@ -15,6 +15,7 @@ app.get("/",(req,res)=>{
 app.post("/app/items",async(req,res)=>{
     try {
         let data = req.body;
+        console.log(data)
         if(!data){
             res.status(400).send("Please provide Items details!")
         }
