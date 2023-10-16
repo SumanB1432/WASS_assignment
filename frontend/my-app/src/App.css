@@ -1,0 +1,26 @@
+.nav-ui li{
+  display: inline-block;
+  padding: 10px;
+}
+.nav-ui li a{
+color: white;
+padding: 5px;
+text-decoration: none;
+}
+.nav-ui {
+  margin: 0px;
+  background-color: thistle;
+  padding: 0;
+  text-decoration: none;
+}
+.inputBox{
+
+  display: block;
+  margin: 20px;
+  padding: 5px;
+  width: 300px;
+  border: 1px solid skyblue;
+}
+.product{
+  margin-left: 30%;
+}

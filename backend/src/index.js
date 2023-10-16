@@ -12,7 +12,7 @@ app.get("/",(req,res)=>{
     res.send("app is working")
 })
 
-app.post("/app/items",async(req,res)=>{
+app.post("/POST/api/items",async(req,res)=>{
     try {
         let data = req.body;
         console.log(data)
@@ -34,6 +34,48 @@ app.post("/app/items",async(req,res)=>{
 
     }
 })
+
+
+app.get("/GET/api/items",async (req,res)=>{
+    try {
+        let items = await item.find();
+        if(items.length>0){
+            return res.status(200).send(items)
+        }
+        else{
+            return res.status(404).send({result:'no result found'})
+        }
+        
+    } catch (error) {
+        return res.status(500).send(error)
+        
+    }
+})
+
+
+app.delete("DELETE/api/items/:id",async(req,res)=>{
+    try{
+    let id = req.params.id;
+    const result = await item.deleteOne({_id:id});
+    return res.status(200).send(result)
+    }
+    catch(err){
+        return res.status(500).send({status:false,message:err})
+    }
+
+})
+app.put("/PUT/items/:id",async (req, resp) => {
+    try{
+    let result = await item.updateOne(
+        { _id: req.params.id },
+        { $set: req.body }
+    )
+    return resp.status(200).send(result)
+    }
+    catch(err){
+        return resp.status(500).send({status:false,message:err})
+    }
+});
 
 app.listen(process.env.PORT,(err)=>{
     if(!err){
