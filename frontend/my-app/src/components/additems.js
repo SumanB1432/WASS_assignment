@@ -20,7 +20,7 @@ function Additems(){
         console.warn(name,price,category,company);
 
   
-        let result = await fetch('http://localhost:4000/POST/api/items',{
+        let result = await fetch('https://assignment-backend-wass.onrender.com/POST/api/items',{
             method:'post',
             body:JSON.stringify({name,price,category,company}),
             headers: {

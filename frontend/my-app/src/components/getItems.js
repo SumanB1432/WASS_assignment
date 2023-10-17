@@ -10,7 +10,7 @@ function Productlist() {
     },[])
 
     const getItem = async()=>{
-        let result = await fetch('http://localhost:4000/GET/api/items');
+        let result = await fetch('https://assignment-backend-wass.onrender.com/GET/api/items');
       
         result = await result.json();
         result = Array.from(result)
@@ -20,7 +20,7 @@ function Productlist() {
     console.warn(products)
 
     const deleteProduct=async(id)=>{
-        let result = await fetch(`http://localhost:4000/DELETE/api/items/${id}`,{
+        let result = await fetch(`https://assignment-backend-wass.onrender.com/DELETE/api/items/${id}`,{
         method:'Delete'
       
     });
