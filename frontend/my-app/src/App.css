@@ -24,3 +24,25 @@ text-decoration: none;
 .product{
   margin-left: 30%;
 }
+
+.product-list{
+  text-align: center;
+  margin-top: 50px;
+}
+.product-list ul li{
+  display: inline-block;
+  border: 1px solid skyblue;
+  padding:5px;
+  width:150px
+}
+.product-list ul{
+  margin: 0;
+}
+.add-button,.update-button{
+  margin:25px;
+  padding:10px;
+  width:100px;
+  background-color:skyblue;
+  border:1px solid ;
+  cursor:pointer
+}

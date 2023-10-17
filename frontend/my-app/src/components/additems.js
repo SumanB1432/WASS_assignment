@@ -3,11 +3,14 @@ import { useState } from "react";
 
 function Additems(){
 
+
     const [name,setName] = useState("");
     const [price,setPrice] = useState("");
     const [category,setCategory] = useState("");
     const [company,setCompany] = useState("");
     const [error,setError] = useState(false)
+
+
     const addProduct=async ()=>{
 
         if(!name || !price || !category || !company){
@@ -17,17 +20,17 @@ function Additems(){
         console.warn(name,price,category,company);
 
   
-        let result = await fetch('http://localhost:4000/app/items',{
+        let result = await fetch('http://localhost:4000/POST/api/items',{
             method:'post',
             body:JSON.stringify({name,price,category,company}),
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
                 
             },
         });
-        result = await result.json();
-        console.warn(result)
+       if(result){
         alert("Item added successfully")
+       }
         
     }
 
