@@ -53,7 +53,7 @@ app.get("/GET/api/items",async (req,res)=>{
 })
 
 
-app.delete("DELETE/api/items/:id",async(req,res)=>{
+app.delete("/DELETE/api/items/:id",async(req,res)=>{
     try{
     let id = req.params.id;
     const result = await item.deleteOne({_id:id});
@@ -64,7 +64,7 @@ app.delete("DELETE/api/items/:id",async(req,res)=>{
     }
 
 })
-app.put("/PUT/items/:id",async (req, resp) => {
+app.put("/PUT/api/items/:id",async (req, resp) => {
     try{
     let result = await item.updateOne(
         { _id: req.params.id },

@@ -21,7 +21,7 @@ function Productlist() {
     console.warn(products)
 
     const deleteProduct=async(id)=>{
-        let result = await fetch(`http://DELETE/api/items/${id}`,{
+        let result = await fetch(`http://localhost:4000/DELETE/api/items/${id}`,{
         method:'Delete'
       
     });
@@ -33,19 +33,7 @@ function Productlist() {
 
     }
 
-    // const searchHandle = async (event)=>{
-    //     let key = event.target.value;
-    //     if(key){
-    //         let result = await fetch(`http://eedss.onrender.com/search/${key}`);
-    //         result = await result.json()
-    //         if(result){
-    //             setProducts(result)
-    //         }
-    //     }else{
-    //         getItem();
-    //     }
-        
-    // }
+
 
   return (
     <div className='product-list'>
